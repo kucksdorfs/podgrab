@@ -244,8 +244,13 @@ func GetPodcastItemImageById(c *gin.Context) {
 
 		err := db.GetPodcastItemById(searchByIdQuery.Id, &podcast)
 		if err == nil {
+
 			if _, err = os.Stat(podcast.LocalImage); os.IsNotExist(err) {
-				c.Redirect(302, podcast.Image)
+				if podcast.Image == "" {
+					c.Redirect(302, podcast.Podcast.Image)
+				} else {
+					c.Redirect(302, podcast.Image)
+				}
 			} else {
 				c.File(podcast.LocalImage)
 			}
