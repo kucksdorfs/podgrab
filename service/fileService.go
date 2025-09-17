@@ -36,14 +36,15 @@ func Download(link string, episodeTitle string, podcastName string, prefix strin
 	req.Header.Add("User-Agent", "Go-http-client")
 
 	client := httpClient()
-	req, err := getRequest(link)
+	req, err = getRequest(link)
+
 	if err != nil {
 		Logger.Errorw("Error creating request: "+link, err)
 	}
 
 	resp, err := client.Do(req)
 
-  if err != nil {
+	if err != nil {
 		Logger.Errorw("Error getting response: "+link, err)
 		return "", err
 	}
@@ -131,7 +132,7 @@ func DownloadPodcastCoverImage(link string, podcastName string) (string, error) 
 	req.Header.Add("User-Agent", "Go-http-client")
 
 	client := httpClient()
-	req, err := getRequest(link)
+	req, err = getRequest(link)
 	if err != nil {
 		Logger.Errorw("Error creating request: "+link, err)
 		return "", err
