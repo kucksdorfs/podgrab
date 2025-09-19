@@ -1,4 +1,3 @@
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -14,7 +13,7 @@
   </a> -->
 
   <h1 align="center" style="margin-bottom:0px">Podgrab</h1>
-  <p align="center">Current Version -2022.07.07</p>
+  <p align="center">Current Version -2028.09.18</p>
 
   <p align="center">
     A self-hosted podcast manager to download episodes as soon as they become live
